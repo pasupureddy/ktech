@@ -20,6 +20,16 @@ app.post('/api/contact', (req, res) => {
     res.send({ message: 'Thank you for contacting us!' });
 });
 
+app.get('/api/courses', (req, res) => {
+    const courses = [
+        { id: 1, name: 'Web Development', description: 'Learn HTML, CSS, and JavaScript.' },
+        { id: 2, name: 'Data Science', description: 'Dive into data analysis and machine learning.' },
+        { id: 3, name: 'Cloud Computing', description: 'Master AWS, Azure, and GCP.' },
+    ];
+    res.send(courses);
+});
+
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
