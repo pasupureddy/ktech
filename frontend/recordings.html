@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Recordings</title>
+</head>
+<body>
+    <h2>Welcome to Class Recordings</h2>
+    <p>Here are your available class recordings:</p>
+    <ul id="recordingsList"></ul>
+
+    <!-- Fetch recordings script -->
+    <script>
+        async function fetchRecordings() {
+        const authToken = localStorage.getItem('authToken');
+        console.log('Auth Token:', authToken); // Debug
+    
+        if (!authToken) {
+            alert('You must log in to access this page.');
+            window.location.href = 'login.html';
+            return;
+        }
+    
+        try {
+            const response = await fetch('http://localhost:5001/api/recordings', {
+                headers: {
+                    'Authorization': `Bearer ${authToken}`
+                }
+            });
+    
+            if (response.ok) {
+                const recordings = await response.json();
+                console.log('Recordings:', recordings); // Debug
+                const list = document.getElementById('recordingsList');
+                recordings.forEach(recording => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = recording.title;
+                    list.appendChild(listItem);
+                });
+            } else {
+                const errorResponse = await response.json();
+                console.error('Error fetching recordings:', errorResponse);
+                alert(`Error: ${errorResponse.error || 'Failed to fetch recordings'}`);
+                window.location.href = 'login.html';
+            }
+        } catch (error) {
+            console.error('Error fetching recordings:', error);
+            alert('An error occurred. Please try again.');
+        }
+}
+
+        // Call the function when the page loads
+        fetchRecordings();
+    </script>
+</body>
+</html>

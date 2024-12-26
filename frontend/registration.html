@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <form id="registrationForm">
+        <h2>Register</h2>
+        <label for="registerName">Name:</label>
+        <input type="text" id="registerName" required><br>
+
+        <label for="registerEmail">Email:</label>
+        <input type="email" id="registerEmail" required><br>
+
+        <label for="registerPassword">Password:</label>
+        <input type="password" id="registerPassword" required><br>
+
+        <label for="registerRole">Role:</label>
+        <select id="registerRole">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+        </select><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <div id="registrationResponse"></div>
+
+    <script src="js/register.js"></script> <!-- Shared login.js file -->
+</body>
+</html>

@@ -56,3 +56,4 @@ async function loadCourses() {
 
 // Call loadCourses when the page loads
 document.addEventListener('DOMContentLoaded', loadCourses);
+

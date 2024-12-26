@@ -1,62 +1,163 @@
+/* General Body and Layout Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
-header {
-    background-color: #4CAF50;
-    color: white;
+
+/* Navigation Styling */
+nav {
+    background-color: #005f73;
+    padding: 10px 20px;
     text-align: center;
-    padding: 1em 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
+
 nav a {
+    color: white;
     margin: 0 15px;
     text-decoration: none;
-    color: #4CAF50;
+    font-weight: bold;
+    text-transform: uppercase;
 }
+
 nav a:hover {
-    text-decoration: underline;
+    color: #f0a500;
 }
-main {
+
+/* Fixing the login button to the top-right corner */
+nav .login-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+/* Welcome Section */
+#welcome {
+    background: linear-gradient(to right, #2a9d8f, #264653);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    margin-top: 60px; /* Offset for the fixed nav */
+}
+
+#welcome h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+#welcome p {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* About Section */
+#about {
+    background-color: #e9c46a;
+    color: #264653;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+}
+
+#about p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* Courses Section */
+#courses {
+    background-color: #f4a261;
+    color: #264653;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#courses h2 {
+    font-size: 2.5rem;
+}
+
+#courses p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #264653;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+}
+
+#contact form {
+    max-width: 400px; /* Limit the form width */
+    margin: 30px auto;
+    text-align: left;
     padding: 20px;
+    background-color: #2a9d8f; /* Light background for the form */
+    border-radius: 8px;
 }
-form {
-    display: flex;
-    flex-direction: column;
+
+/* Form labels and input fields */
+#contact label {
+    display: block;
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
 }
-input {
-    margin-bottom: 10px;
-    padding: 5px;
+
+#contact input {
+    width: 100%; /* Take up full width of the form container */
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
-button {
-    background-color: #4CAF50;
+
+/* Submit Button */
+#contact button {
+    width: 100%; /* Make the button match the form width */
+    padding: 10px;
+    font-size: 1.1rem;
+    background-color: #f0a500;
     color: white;
     border: none;
-    padding: 10px;
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-nav {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-}
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-}
-nav a:hover {
-    text-decoration: underline;
-}
-section {
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#contact button:hover {
+    background-color: #d99a00;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #005f73;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
 }

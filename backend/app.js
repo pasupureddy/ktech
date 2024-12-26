@@ -8,6 +8,11 @@ const PORT = 5001;
 app.use(bodyParser.json());
 app.use(cors());
 
+const authRoutes = require('./routes/authRoutes');
+const recordingsRoutes = require('./routes/recordingsRoutes');
+app.use('/api/auth', authRoutes);
+app.use('/api/recordings', recordingsRoutes);
+
 // Handle GET request to root URL
 app.get('/', (req, res) => {
     res.send('Welcome to the backend server!');
